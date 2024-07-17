@@ -5,22 +5,23 @@ import (
 )
 
 type Products struct {
-	ID         uuid.UUID `gorm:"type:uuid; primaryKey"`
+	ID         uuid.UUID `gorm:"type:uuid; primaryKey; default:uuid_generate_v4()"`
 	Name       string    `json:"name" validate:"required"`
 	Desc       string    `json:"desc" validate:"required"`
 	Price      float64   `json:"price" validate:"required"`
+	Stock      uint64    `json:"stock"`
 	CategoryID uuid.UUID `json:"category_id" validate:"required"`
 	Model
 }
 
 type Categories struct {
-	ID   uuid.UUID `gorm:"type:uuid; primaryKey"`
+	ID   uuid.UUID `gorm:"type:uuid; primaryKey; default:uuid_generate_v4()"`
 	Name string    `json:"name"`
 	Model
 }
 
 type CartItems struct {
-	ID        uuid.UUID `gorm:"type:uuid; primaryKey"`
+	ID        uuid.UUID `gorm:"type:uuid; primaryKey; default:uuid_generate_v4()"`
 	UserID    uuid.UUID `json:"user_id" validate:"required"`
 	ProductID uuid.UUID `json:"product_id" validate:"required"`
 	Quantity  uuid.UUID `json:"quantity" validate:"required"`
@@ -28,7 +29,7 @@ type CartItems struct {
 }
 
 type Orders struct {
-	ID             uuid.UUID `gorm:"type:uuid; primaryKey"`
+	ID             uuid.UUID `gorm:"type:uuid; primaryKey; default:uuid_generate_v4()"`
 	UserID         uuid.UUID `json:"user_id" validate:"required"`
 	TotalAmount    float64   `json:"total_amount" validate:"required"`
 	Status         string    `json:"status" validate:"required"`
@@ -38,7 +39,7 @@ type Orders struct {
 }
 
 type OrderItems struct {
-	ID           uuid.UUID `gorm:"type:uuid; primaryKey"`
+	ID           uuid.UUID `gorm:"type:uuid; primaryKey; default:uuid_generate_v4()"`
 	OrderID      uuid.UUID `json:"order_id" validate:"required"`
 	ProductID    uuid.UUID `json:"product_id" validate:"required"`
 	ProductName  string    `json:"product_name" validate:"required"`

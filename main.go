@@ -6,19 +6,19 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	database "github.com/hebobibun/go-ecommerce/db"
+	"github.com/hebobibun/go-ecommerce/routes"
 )
 
 func init() {
 	database.Migrate()
+	database.InitRedis()
 }
 
 func main() {
 
 	app := fiber.New()
-
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, World!\n")
-	})
+	routes.AdminRoutes(app)
+	routes.UserRoutes(app)
 
 	log.Println("Server running on port " + os.Getenv("PORT"))
 
