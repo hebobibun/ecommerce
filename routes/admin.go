@@ -11,4 +11,5 @@ var (
 
 func AdminRoutes(app *fiber.App) {
 	app.Post("/admin/create", admin.Create)
+	app.Post("/admin/login", admin.Login)
 }

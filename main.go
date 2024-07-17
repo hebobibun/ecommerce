@@ -11,6 +11,7 @@ import (
 
 func init() {
 	database.Migrate()
+	database.InitRedis()
 }
 
 func main() {
