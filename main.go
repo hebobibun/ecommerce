@@ -18,6 +18,7 @@ func main() {
 
 	app := fiber.New()
 	routes.AdminRoutes(app)
+	routes.UserRoutes(app)
 
 	log.Println("Server running on port " + os.Getenv("PORT"))
 
