@@ -5,7 +5,12 @@ import (
 	"os"
 
 	"github.com/gofiber/fiber/v2"
+	database "github.com/hebobibun/go-ecommerce/db"
 )
+
+func init() {
+	database.Migrate()
+}
 
 func main() {
 
