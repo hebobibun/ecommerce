@@ -9,6 +9,7 @@ type Products struct {
 	Name       string    `json:"name" validate:"required"`
 	Desc       string    `json:"desc" validate:"required"`
 	Price      float64   `json:"price" validate:"required"`
+	Stock      uint64    `json:"stock"`
 	CategoryID uuid.UUID `json:"category_id" validate:"required"`
 	Model
 }
