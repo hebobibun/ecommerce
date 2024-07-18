@@ -64,7 +64,7 @@ This project is an MVP (Minimum Viable Product) for an ecommerce platform that p
 
     ```env
     PORT=9090
-    DNS= "host=localhost user=db_user password=db_password dbname=db_name port=5432 sslmode=disable"
+    DNS="host=localhost user=db_user password=db_password dbname=db_name port=5432 sslmode=disable"
     JWT_SECRET=your_jwt_secret
     ```
 
