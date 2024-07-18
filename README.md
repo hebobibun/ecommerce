@@ -63,8 +63,8 @@ This project is an MVP (Minimum Viable Product) for an ecommerce platform that p
     Create a `.env` file in the root of the project with the following content:
 
     ```env
-    DATABASE_URL=postgres://user:password@localhost:5432/ecommerce
-    REDIS_URL=redis://localhost:6379
+    PORT=9090
+    DNS= "host=localhost user=db_user password=db_password dbname=db_name port=5432 sslmode=disable"
     JWT_SECRET=your_jwt_secret
     ```
 
